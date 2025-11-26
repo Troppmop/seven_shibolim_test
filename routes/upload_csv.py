@@ -1,9 +1,9 @@
 from fastapi import UploadFile, APIRouter, File
 
-from utils.csv_handler import process_csv
+from utils.upload_response import response
 
 router = APIRouter()
 
 @router.post("/assignWithCsv/")
 def upload_csv(file: UploadFile = File()):
-    return process_csv(file)
+    return response(file)
