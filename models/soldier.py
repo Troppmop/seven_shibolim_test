@@ -5,6 +5,7 @@ class Soldier(BaseModel):
     id: int
     first_name: str
     last_name: str
-    gender: Literal['male','female']
+    gender: Literal['זכר','נקבה']
+    city: str
     distance_km: int
     placement_status: Literal['placed', 'not placed']

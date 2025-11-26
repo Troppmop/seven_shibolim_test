@@ -1,6 +1,6 @@
 from pydantic import BaseModel
 
-from room import Room
+from models.room import Room
 
 class Dorm(BaseModel):
     name: str

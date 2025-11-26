@@ -1,6 +1,6 @@
 from pydantic import BaseModel
 
-from soldier import Soldier
+from models.soldier import Soldier
 
 class Room(BaseModel):
     number: int

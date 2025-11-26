@@ -1,7 +1,7 @@
 from pydantic import BaseModel
 
-from dorm import Dorm
-from soldier import Soldier
+from models.dorm import Dorm
+from models.soldier import Soldier
 
 class Base(BaseModel):
     name: str

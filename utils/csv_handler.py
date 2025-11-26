@@ -2,6 +2,8 @@ from fastapi import UploadFile
 import csv
 from io import StringIO
 
+from dal.soldier_dal import create_soldier
+
 def process_csv(file: UploadFile)->dict:
     if file.content_type != "text/csv":
         return {"error": "File must be a CSV"}
@@ -13,7 +15,7 @@ def process_csv(file: UploadFile)->dict:
     rows = list(reader)
 
     for line in rows:
-        print(line)
+        print(create_soldier(line))
 
     return {
         'filename': file.filename,
