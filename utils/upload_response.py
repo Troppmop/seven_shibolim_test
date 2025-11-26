@@ -4,6 +4,7 @@ from dal.base_dal import create_base
 from utils.place_soldiers import place
 from utils.csv_handler import process_csv
 from utils.total_placed import get_total
+from utils.status_records import get_soldier_record
 
 #constants
 BASE_NAME = "Seven Shibolim"
@@ -25,8 +26,11 @@ def response(file:UploadFile)->dict:
     #gets total of waiting soldiers
     waiting_soldiers = len(full_base.waiting_list)
 
+    soldier_record = get_soldier_record(full_base)
+
     #returns response for http request    
     return {
-        'placed_soldiers': placed_soldiers,
-        'waiting_soldiers': waiting_soldiers
+        'total_placed_soldiers': placed_soldiers,
+        'total_waiting_soldiers': waiting_soldiers,
+        'soldier_status_record': soldier_record 
     }
